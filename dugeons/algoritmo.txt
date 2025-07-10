@@ -1,0 +1,19 @@
+Algoritmo de generación de mazmorra procedural:
+    1. Loop de intentos: Intenta colocar hasta 10.000 puntos (habitaciones potenciales).
+    2. Punto aleatorio: Genera una posición aleatoria (x, y) dentro de los márgenes del mapa.
+    3. Crea una habitación: Tamaño aleatorio dentro de límites (10x10 a 20x20).
+    4. Chequea colisiones: Si la nueva habitación choca con otra, la descarta (continue outer).
+    5. Guarda coordenadas: Marca las posiciones X e Y usadas para evitar superposición futura.
+    6. Agrega la habitación: Si no choca, la guarda y dibuja en azul.
+    7. Guarda el centro: Guarda el punto central de cada habitación para conectar después.
+
+Generación del árbol de caminos (conexiones mínimas tipo Prim's):
+    1. Empieza con 1 habitación: Mueve el primer punto al "árbol" de conexiones.
+    
+    Mientras queden puntos:
+        1. Busca el más cercano: Encuentra la pareja (punto en árbol y punto fuera) con menor distancia.
+        2. Conecta con pasillo en forma de L: Primero línea vertical, luego horizontal (en rojo).
+        3. Agrega el nuevo punto al árbol: Lo marca como conectado.
+
+Finalmente:
+    1. Rellena habitaciones: Se pintan con color gris oscuro para representar el suelo de las salas.
